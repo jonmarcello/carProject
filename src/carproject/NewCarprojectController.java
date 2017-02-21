@@ -24,6 +24,7 @@ public class NewCarprojectController implements Initializable {
     @FXML private TextField yearTextField;
     @FXML private TextField milageTextField;
     @FXML private TextField askingPriceTextField;
+    @FXML private CheckComboBox featuresComboBox;
     @FXML private Button newCarButton;
 
     
@@ -37,6 +38,7 @@ public class NewCarprojectController implements Initializable {
                Integer.parseInt(yearTextField.getText()), 
                Integer.parseInt(milageTextField.getText()), 
                Double.parseDouble(askingPriceTextField.getText()));
+               
        System.out.printf("The new vehicle is $s$n", newCar); 
         
     }    

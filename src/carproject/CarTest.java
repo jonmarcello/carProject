@@ -47,8 +47,24 @@ public class CarTest {
         System.out.println("Test creation of invalid Car");
         try
         {
-            Car invalidCar = new Car("Honda", "Civic", 2000, 10000, 9999.99, new String[]{"feature1", "feature2"});    
-            fail("the invalid postal code should have thrown an exception");
+            Car invalidCar = new Car("Honda", "Civic", 2200, 10000, 9999.99, new String[]{"feature1", "feature2"});    
+            fail("the throw for to high of a year should be thrown");
+        }
+        catch (IllegalArgumentException e)
+        {            
+        }
+    }
+    
+    /*
+    * Test valid car milage
+    */
+    @Test
+    public void testInvalidCarMilage() {
+        System.out.println("Test creation of invalid Car");
+        try
+        {
+            Car invalidCar = new Car("Honda", "Civic", 2000, 10000000, 9999.99, new String[]{"feature1", "feature2"});    
+            fail("Throw for large milage");
         }
         catch (IllegalArgumentException e)
         {            

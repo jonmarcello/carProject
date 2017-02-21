@@ -96,7 +96,7 @@ public class CarTest {
     public void testGetMiliage() {
         System.out.println("getMiliage");
         int expResult = 10000;
-        int result = validCar.getMiliage();
+        int result = validCar.getMilage();
         assertEquals(expResult, result);
     }
     
@@ -107,7 +107,7 @@ public class CarTest {
     public void testGetSellingPrice() {
         System.out.println("getSellingPrice");
         double expResult = 9999.99;
-        double result = validCar.getMiliage();
+        double result = validCar.getSellingPrice();
         assertEquals(expResult, result, 0);
     }
     
@@ -187,4 +187,5 @@ public class CarTest {
         validCar.setFeatures(features);
         assertArrayEquals(features, validCar.getFeatures());
     }
+
 }

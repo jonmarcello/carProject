@@ -47,8 +47,24 @@ public class CarTest {
         System.out.println("Test creation of invalid Car");
         try
         {
-            Car invalidCar = new Car("Honda", "Civic", 2000, 10000, 9999.99, new String[]{"feature1", "feature2"});    
-            fail("the invalid postal code should have thrown an exception");
+            Car invalidCar = new Car("Honda", "Civic", 2200, 10000, 9999.99, new String[]{"feature1", "feature2"});    
+            fail("the throw for to high of a year should be thrown");
+        }
+        catch (IllegalArgumentException e)
+        {            
+        }
+    }
+    
+    /*
+    * Test valid car milage
+    */
+    @Test
+    public void testInvalidCarMilage() {
+        System.out.println("Test creation of invalid Car");
+        try
+        {
+            Car invalidCar = new Car("Honda", "Civic", 2000, 10000000, 9999.99, new String[]{"feature1", "feature2"});    
+            fail("Throw for large milage");
         }
         catch (IllegalArgumentException e)
         {            
@@ -90,13 +106,13 @@ public class CarTest {
     
         
     /*
-    * test miliage
+    * test milage
     */
     @Test
-    public void testGetMiliage() {
-        System.out.println("getMiliage");
+    public void testGetMilage() {
+        System.out.println("getMilage");
         int expResult = 10000;
-        int result = validCar.getMiliage();
+        int result = validCar.getMilage();
         assertEquals(expResult, result);
     }
     
@@ -107,7 +123,7 @@ public class CarTest {
     public void testGetSellingPrice() {
         System.out.println("getSellingPrice");
         double expResult = 9999.99;
-        double result = validCar.getMiliage();
+        double result = validCar.getSellingPrice();
         assertEquals(expResult, result, 0);
     }
     
@@ -121,4 +137,71 @@ public class CarTest {
         String result[] = validCar.getFeatures();
         assertArrayEquals(expResult, result);
     }
+    
+    /*
+    * test set make
+    */
+    @Test
+    public void testSetMake() {
+        System.out.println("setMake");
+        String make = "Toyota";
+        validCar.setMake(make);
+        assertEquals(make, validCar.getMake());
+    }
+    
+    /*
+    * test set model
+    */
+    @Test
+    public void testSetModel() {
+        System.out.println("setModel");
+        String model = "Camery";
+        validCar.setModel(model);
+        assertEquals(model, validCar.getMake());
+    }
+    
+    /*
+    * test set model
+    */
+    @Test
+    public void testSetYear() {
+        System.out.println("setYear");
+        int year = 2001;
+        validCar.setYear(year);
+        assertEquals(year, validCar.getYear());
+    }
+    
+    /*
+    * test set model
+    */
+    @Test
+    public void testSetMilage() {
+        System.out.println("setMilage");
+        int milage = 120000;
+        validCar.setMilage(milage);
+        assertEquals(milage, validCar.getMilage(), 0);
+    }
+    
+    /*
+    * test set model
+    */
+    @Test
+    public void testSetSellingPrice() {
+        System.out.println("setSellingPrice");
+        double sellingPrice = 11999.99;
+        validCar.setSellingPrice(sellingPrice);
+        assertEquals(sellingPrice, validCar.getSellingPrice(), 0);
+    }
+    
+    /*
+    * test set features
+    */
+    @Test
+    public void testSetFeatures() {
+        System.out.println("setSetFeatures");
+        String features[] = {"feature1", "feature2", "feature3"};
+        validCar.setFeatures(features);
+        assertArrayEquals(features, validCar.getFeatures());
+    }
+
 }

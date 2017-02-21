@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import org.controlsfx.control.CheckComboBox?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="carproject.NewCarprojectController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carproject.NewCarprojectController">
    <children>
       <GridPane layoutX="200.0" layoutY="29.0">
         <columnConstraints>
@@ -39,10 +38,10 @@
             <TextField fx:id="yearTextField" promptText="Year" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <ComboBox fx:id="makeComboBox" prefWidth="150.0" promptText="Make" GridPane.columnIndex="1" />
             <Label text="Features" GridPane.rowIndex="5" />
-            <CheckComboBox GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <CheckComboBox fx:id="featuresComboBox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <Button fx:id="newCarButton" layoutX="373.0" layoutY="277.0" mnemonicParsing="false" text="Submit" />
+      <Button fx:id="newCarButton" layoutX="373.0" layoutY="277.0" mnemonicParsing="false" onAction="#createNewCarbuttonPushed" text="Submit" />
    </children>
    <opaqueInsets>
       <Insets top="20.0" />

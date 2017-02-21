@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import org.controlsfx.control.CheckComboBox;
 
 /**
  * FXML Controller class
@@ -27,20 +28,26 @@ public class NewCarprojectController implements Initializable {
     @FXML private CheckComboBox featuresComboBox;
     @FXML private Button newCarButton;
 
-    
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       Car newCar = new Car (makeComboBox.getValue(), 
+        makeComboBox.getItems().addAll("honda","gm","volkswagon", "audi");
+        featuresComboBox.getItems().addAll("faster engine", "hybrid", "heated seats", "adaptive cruse control", "leather seats");
+    }    
+    
+    public void createNewCarbuttonPushed()
+   {
+       Car newCar = new Car (makeComboBox.getValue().toString(), 
                modelTextField.getText(), 
                Integer.parseInt(yearTextField.getText()), 
                Integer.parseInt(milageTextField.getText()), 
-               Double.parseDouble(askingPriceTextField.getText()));
-               
+               Double.parseDouble(askingPriceTextField.getText()),
+               (String[])featuresComboBox.getCheckModel().getCheckedItems().toArray());
        System.out.printf("The new vehicle is $s$n", newCar); 
-        
-    }    
+   }
     
 }

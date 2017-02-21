@@ -5,6 +5,8 @@
  */
 package carproject;
 
+import java.time.LocalDate;
+import java.time.Month;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,5 +19,106 @@ import static org.junit.Assert.*;
  * @author Jon
  */
 public class CarTest {
+    Car validCar;
     
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+        validCar = new Car("Honda", "Civic", 2000, 10000, 9999.99, new String[]{"feature1", "feature2"});
+    }
+    
+    @After
+    public void tearDown() {
+    }
+    
+    
+    /*
+    * Test valid car method
+    */
+    @Test
+    public void testInvalidCar() {
+        System.out.println("Test creation of invalid Car");
+        try
+        {
+            Car invalidCar = new Car("Honda", "Civic", 2000, 10000, 9999.99, new String[]{"feature1", "feature2"});    
+            fail("the invalid postal code should have thrown an exception");
+        }
+        catch (IllegalArgumentException e)
+        {            
+        }
+    }
+       
+    /*
+    * test make
+    */
+    @Test
+    public void testGetMake() {
+        System.out.println("getMake");
+        String expResult = "Civic";
+        String result = validCar.getMake();
+        assertEquals(expResult, result);
+    }
+     
+    /*
+    * test car model
+    */
+    @Test
+    public void testGetModel() {
+        System.out.println("getModel");
+        String expResult = "Honda";
+        String result = validCar.getModel();
+        assertEquals(expResult, result);
+    }
+
+    /*
+    * Test car year
+    */
+    @Test
+    public void testGetYear() {
+        System.out.println("getYear");
+        int expResult = 2000;
+        int result = validCar.getYear();
+        assertEquals(expResult, result);
+    }
+    
+        
+    /*
+    * test miliage
+    */
+    @Test
+    public void testGetMiliage() {
+        System.out.println("getMiliage");
+        int expResult = 10000;
+        int result = validCar.getMiliage();
+        assertEquals(expResult, result);
+    }
+    
+    /*
+    * test selling price
+    */
+    @Test
+    public void testGetSellingPrice() {
+        System.out.println("getSellingPrice");
+        double expResult = 9999.99;
+        double result = validCar.getMiliage();
+        assertEquals(expResult, result, 0);
+    }
+    
+    /*
+    * test get features
+    */
+    @Test
+    public void testGetFeatures() {
+        System.out.println("getFeatures");
+        String expResult[] = {"feature1", "feature2"};
+        String result[] = validCar.getFeatures();
+        assertArrayEquals(expResult, result);
+    }
 }

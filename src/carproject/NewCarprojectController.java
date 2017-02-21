@@ -26,8 +26,6 @@ public class NewCarprojectController implements Initializable {
     @FXML private TextField milageTextField;
     @FXML private TextField askingPriceTextField;
     @FXML private Button newCarButton;
-    @FXML private RadioButton carRadioButton;
-    @FXML private RadioButton motorcycleRadioButton;
 
     
     /**

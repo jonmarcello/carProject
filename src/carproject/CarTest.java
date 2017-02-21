@@ -90,11 +90,11 @@ public class CarTest {
     
         
     /*
-    * test miliage
+    * test milage
     */
     @Test
-    public void testGetMiliage() {
-        System.out.println("getMiliage");
+    public void testGetMilage() {
+        System.out.println("getMilage");
         int expResult = 10000;
         int result = validCar.getMilage();
         assertEquals(expResult, result);

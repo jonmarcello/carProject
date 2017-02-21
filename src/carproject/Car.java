@@ -25,7 +25,7 @@ public class Car {
      this.make = make;
      this.model = model;
      setYear(year);
-     this.milage = milage;
+     setMilage(milage);
      this.sellingPrice = sellingPrice;
      this.features = features;
     }
@@ -33,7 +33,6 @@ public class Car {
     public String getMake(){    
         return make;
     }
-    
     
     public String getModel(){
         return model;
@@ -55,25 +54,21 @@ public class Car {
         return year;
     }
     
-    public void setMilage(){
+    public void setMilage(int milage){
         if(milage <0 && milage >1000000){
             throw new IllegalArgumentException("Milage must be between 0, and 1 000 000 miles");
         }else{
-        this.milage = milage;
+            this.milage = milage;
         }
     }
+    
     public void setYear(int year){
         
-      if(year>1900 && year<LocalDate.now().getYear() + 1){
-        this.year = year; 
-      }else{
-      throw new IllegalArgumentException("year must be between 1900, and 2018");
-      }
-    
-    
-    
-    
-      
+        if(year>1900 && year<LocalDate.now().getYear() + 1){
+            this.year = year; 
+        } else {
+            throw new IllegalArgumentException("year must be between 1900, and 2018");
+        }      
     }
     
     

@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
@@ -19,7 +20,7 @@ import javafx.scene.control.TextField;
  * @author Nathan
  */
 public class NewCarprojectController implements Initializable {
-    @FXML private TextField makeTextField;
+    @FXML private ComboBox makeComboBox;
     @FXML private TextField modelTextField;
     @FXML private TextField yearTextField;
     @FXML private TextField milageTextField;

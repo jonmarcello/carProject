@@ -5,7 +5,9 @@
  */
 package carproject;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
+
+
 
 /**
  *
@@ -13,11 +15,24 @@ import java.time.LocalDate;
  */
 public class Car {
     
-    private String make, model, features;
+    private String model;
     private int year, milage;
     private double sellingPrice;
+    private String features[], make[];
     
-    public String getMake(){
+    public String[] getMake(){
+    ArrayList<String> carManufacturer = new ArrayList<String>();
+    carManufacturer.add("Ford");
+    carManufacturer.add("Honda");
+    carManufacturer.add("GM");
+    carManufacturer.add("Chevrolet");
+    carManufacturer.add("Volkswagon");
+    carManufacturer.add("Audi");
+    carManufacturer.add("Toyota");
+    carManufacturer.add("Acura");
+    carManufacturer.add("Dodge");
+
+        
         return make;
     }
     
@@ -25,7 +40,7 @@ public class Car {
         return model;
     }
     
-    public String getFeatures(){
+    public String[] getFeatures(){
         return features;
     }
     
